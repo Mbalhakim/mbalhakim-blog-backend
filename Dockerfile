@@ -11,11 +11,8 @@ RUN npm ci
 # Copy application code
 COPY . .
 
-# Build
-RUN npm run build
-
 # Expose the port Strapi runs on
 EXPOSE 3000
-
-# Start app
-CMD ["npm", "run", "develop"]
+# Production build
+RUN npm run build   
+CMD ["npm", "run", "develop"]  # Development mode
