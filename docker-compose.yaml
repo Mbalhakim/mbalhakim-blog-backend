@@ -1,0 +1,14 @@
+services:
+  strapi:
+    image: strapi-blog
+    ports:
+      - "1337:1337"
+    
+    env_file:
+      - .env
+    
+    volumes:
+      - ./data:/opt/app/.tmp
+      - ./uploads:/opt/app/public/uploads
+    
+    restart: unless-stopped
