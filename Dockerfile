@@ -8,11 +8,15 @@ COPY package.json package-lock.json ./
 # Install dependencies 
 RUN npm ci 
 
+  
 # Copy application code
 COPY . .
 
+# Build the application
+RUN npm run build 
+
 # Expose the port Strapi runs on
 EXPOSE 3000
-# Production build
-RUN npm run build   
-CMD ["npm", "run", "develop"]  # Development mode
+
+# Start in production mode
+CMD ["npm", "run", "start"]
