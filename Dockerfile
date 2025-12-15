@@ -2,21 +2,20 @@ FROM node:20-alpine
 
 WORKDIR /opt/app
 
-#Copy package
-
+# Copy package files
 COPY package.json package-lock.json ./
 
-#install dependencies 
+# Install dependencies 
 RUN npm ci 
 
-#compoy application code
+# Copy application code
 COPY . .
 
-#build
+# Build
 RUN npm run build
 
 # Expose the port Strapi runs on
-EXPOSE 1337
+EXPOSE 3000
 
-#start app
+# Start app
 CMD ["npm", "run", "start"]
