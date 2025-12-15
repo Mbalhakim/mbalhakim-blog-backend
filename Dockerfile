@@ -18,4 +18,4 @@ RUN npm run build
 EXPOSE 3000
 
 # Start app
-CMD ["npm", "run", "start"]
+CMD ["sh", "-c", "npm run ${STRAPI_COMMAND:-start}"]

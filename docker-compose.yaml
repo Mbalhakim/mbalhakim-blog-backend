@@ -10,5 +10,7 @@ services:
     volumes:
       - ./data:/opt/app/.tmp
       - ./uploads:/opt/app/public/uploads
+      - ./src:/opt/app/src
+
     
     restart: unless-stopped
