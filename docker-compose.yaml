@@ -8,8 +8,4 @@ services:
     env_file:
       - .env
     volumes:
-      - strapi-uploads:/opt/app/public/uploads
-
-volumes:
-  strapi-uploads:
-    external: true
+      - /srv/strapi/uploads:/opt/app/public/uploads
