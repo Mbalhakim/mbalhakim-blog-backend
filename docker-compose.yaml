@@ -12,3 +12,4 @@ services:
 
 volumes:
   strapi-uploads:
+    external: true
